@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
 class About extends Component {
 
@@ -11,4 +12,5 @@ class About extends Component {
     }
 }
 
-export default About
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps)(About)

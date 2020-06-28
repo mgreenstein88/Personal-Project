@@ -1,31 +1,15 @@
-import React, {Component} from 'react'
-import axios from 'axios'
+import React from 'react'
+import {connect} from 'react-redux'
 
-class Home extends Component {
-    constructor(){
-        super()
-
-        this.state = {
-            
-        }
-    }
-
-    logout(){
-        axios.delete('/auth/logout')
-        .then( res => {
-          alert('Admin Logout Success!')
-        })
-      }
-
-    render(){
-        return (
-            <div>
-                Home.js
-                <h2>Hey! Admin</h2>
-                <button onClick={ () => this.logout() } >Logout</button>
-            </div>
-        )
-    }
+function Home (props) {
+      
+    return (
+        <div>
+            Home.js
+        </div>
+    )
+    
 }
 
-export default Home
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps)(Home)

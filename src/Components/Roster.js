@@ -20,4 +20,5 @@ class Roster extends Component {
     }
 }
 
-export default Roster
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps)(Roster)

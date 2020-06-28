@@ -75,6 +75,4 @@ class Login extends Component {
 
 const mapStateToProps = reduxState => reduxState
 
-const mapDispatchToProps = {loginAdmin, getAdmin}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, {loginAdmin})(Login)

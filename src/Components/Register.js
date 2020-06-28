@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {loginAdmin} from '../redux/reducer'
 
 class Register extends Component {
 
@@ -26,6 +28,7 @@ class Register extends Component {
 
         axios.post('/auth/register', {email, password})
         .then( res => {
+            this.props.loginAdmin(res.data)
             this.props.history.push('/login')
         }).catch( err => {
             alert('Could Not Register')
@@ -41,7 +44,7 @@ class Register extends Component {
                 Register.js
 
                 <form
-                    onSubmit={ (e) => this.login(e) } >
+                    onSubmit={ (e) => this.register(e) } >
             
                     <input 
                         type='text'
@@ -70,4 +73,5 @@ class Register extends Component {
     }
 }
 
-export default Register
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps, {loginAdmin})(Register)
