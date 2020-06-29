@@ -3,6 +3,7 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {loginAdmin} from '../redux/reducer'
+import photo from '../media/photo1.PNG'
 
 class Register extends Component {
 
@@ -40,34 +41,39 @@ class Register extends Component {
         const {email, password} = this.state
 
         return (
+
             <div>
-                Register.js
-
-                <form
-                    onSubmit={ (e) => this.register(e) } >
-            
-                    <input 
-                        type='text'
-                        placeholder='email'
-                        name='email'
-                        value={email}
-                        onChange={ e => this.changeHandler(e) } />
-                    <input 
-                        type='password'
-                        placeholder='password'
-                        name='password'
-                        value={password}
-                        onChange={ e => this.changeHandler(e) } />
-                    <input 
-                        type='submit'
-                        value='Register'/>
-                </form>
+                <img src={photo}/>
+                <div className='openView'>
+                    Register Here!
+                    
+                    <form className='form'
+                        onSubmit={ (e) => this.register(e) } >
                 
-                <span>Already an admin? Login here:</span>
+                        <input 
+                            type='text'
+                            placeholder='email'
+                            name='email'
+                            value={email}
+                            onChange={ e => this.changeHandler(e) } />
+                        <input 
+                            type='password'
+                            placeholder='password'
+                            name='password'
+                            value={password}
+                            onChange={ e => this.changeHandler(e) } />
+                        <input 
+                            type='submit'
+                            value='Register'/>
+                    </form>
+                    
+                    <span>Already an admin? Login here:</span>
 
-                <Link to='/login'>
-                    Login
-                </Link>
+                    <Link to='/login'
+                    className='links'>
+                        Login
+                    </Link>
+                </div>
             </div>
         )
     }

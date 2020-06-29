@@ -1,6 +1,13 @@
 module.exports = {
     getAthletes: (req, res) => {
         const db = req.app.get('db')
+        let {roster} = req.query.roster
+        
+        if(roster === 'W Lacrosse'){
+            res.status(200).send(athletes)
+        } else if (roster === 'M Hockey'){
+            res.status(200).send(athletes)
+        }
 
         db.get_athletes()
         .then(athletes => res.status(200).send(athletes))

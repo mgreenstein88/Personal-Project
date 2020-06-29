@@ -3,6 +3,7 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {loginAdmin} from '../redux/reducer'
+import photo from '../media/photo1.PNG'
 
 class Login extends Component {
 
@@ -40,34 +41,39 @@ class Login extends Component {
         const {email, password} = this.state
 
         return (
+
             <div>
-                Login.js
+                <img src={photo}/>
+                <div className='openView'>
+                    Login Here !
+                    
+                    <form className='form'
+                        onSubmit={ (e) => this.login(e) } >
+                
+                        <input 
+                            type='text'
+                            placeholder='email'
+                            name='email'
+                            value={email}
+                            onChange={ e => this.changeHandler(e) } />
+                        <input 
+                            type='password'
+                            placeholder='password'
+                            name='password'
+                            value={password}
+                            onChange={ e => this.changeHandler(e) } />
+                        <input 
+                            type='submit'
+                            value='Login'/>
+                    </form>
 
-                <form
-                    onSubmit={ (e) => this.login(e) } >
-            
-                    <input 
-                        type='text'
-                        placeholder='email'
-                        name='email'
-                        value={email}
-                        onChange={ e => this.changeHandler(e) } />
-                    <input 
-                        type='password'
-                        placeholder='password'
-                        name='password'
-                        value={password}
-                        onChange={ e => this.changeHandler(e) } />
-                    <input 
-                        type='submit'
-                        value='Login'/>
-                </form>
+                    <span>Not an admin? Register here:</span>
 
-                <span>Not an admin? Register here:</span>
-
-                <Link to='/register'>
-                    Register
-                </Link>
+                    <Link to='/register'
+                        className='links'>
+                        Register
+                    </Link>
+                </div>
             </div>
         )
     }

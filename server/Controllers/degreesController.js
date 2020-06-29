@@ -1,9 +1,11 @@
 module.exports = {
-    getDegree: (req, res) => {
+    getDegree: async (req, res) => {
         const db = req.app.get('db')
+        const {type} = req.query
 
-        db.get_degree()
-        .then(degrees => res.status(200).send(degrees))
-        .catch(err => console.log(err))
+
+        const degrees = await db.get_degree(type)
+
+        res.status(200).send(degrees)
     }
 }
