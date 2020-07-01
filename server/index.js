@@ -12,7 +12,7 @@ const app = express()
 const SERVER = 3234
 const {CONNECTION_STRING, SECRET_SESSION} = process.env
 
-app.use(express.static(`${__dirname}/.//build`))
+app.use(express.static(`${__dirname}/../build`))
 app.use(express.json())
 app.use(
     session({
