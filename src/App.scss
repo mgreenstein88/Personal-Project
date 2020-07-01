@@ -1,0 +1,184 @@
+$primarycolor: rgb(228, 213, 213);
+$titleSize: 2.5rem;
+$font: helvetica;
+$buttoncolor: rgb(214, 158, 158);
+
+.App {
+    text-align: center;
+    .login {
+        position: absolute;
+        right: 30px;
+        top: 50px;
+        font-size: 1rem;
+        background-color: $buttoncolor;
+        width: 12%;
+        height: 5%;
+        border-radius: 25%;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .logout {
+        position: absolute;
+        right: 90px;
+        top: 20px;
+        background-color: $buttoncolor;
+        width: 5%;
+        height: 3%;
+        border-radius: 25%;
+        border: none;
+    }
+}
+
+body {
+    background-color: $primarycolor;
+}
+
+.photo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: $titleSize;
+    
+    .slc {
+        position: absolute;
+        font-size: 3rem;
+        top:100px;
+        color: white;
+    }
+}
+
+nav {
+    .Welcome {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 3rem;
+    }
+    .nav {
+        position: sticky;
+        display: flex;
+        width: 90%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: rgb(242, 247, 246);
+        padding: 2%;
+        margin: 2%;
+        border-radius: 10%;
+        font-size: 1.5rem;
+    }
+    .links {
+        color: black;
+        text-decoration: none;
+        size: 2rem;
+        font-weight: 700;
+    }
+}
+
+.openView {
+    position: absolute;
+    background-color: rgb(220, 225, 245);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10%;
+    height: 15vh;
+    width: 25vw;
+    justify-content: center;
+    top: 400px;
+    left: 37%;
+}
+
+.athletes {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    border: 1px solid black;
+    width: 70%;
+    left: 270px;
+    background-color: $buttoncolor;
+    text-decoration: black;  
+    top: 20px;
+    border-radius: 15%;
+}
+
+.number {
+        position: relative;
+        left: 100px;
+}
+.name {
+    position: absolute;
+    left: 300px;
+}
+.position {
+    position: absolute;
+    left: 600px;
+}
+.year {
+    position: relative;
+    left: 850px;
+}
+.town {
+    position: relative;
+    left: 1050px;
+}
+
+.sportTitle, .degreeType {
+    position: relative;
+    text-align: center;
+    font-size: $titleSize;
+    font-weight: 600;
+}
+.rosterTitle {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    width: 70%;
+    left: 270px;
+    text-decoration: black;
+    top: 20px;
+    background-color: rgb(242, 247, 246);
+    border-radius: 15%;
+    font-weight: 500;
+}
+
+.about {
+    position: absolute;
+    top: 350px;
+    margin: 0, auto;
+    width: 40vw;
+    color: white;
+    left: 580px;
+}
+
+.degrees {
+    position: relative;
+    font-weight: 100;
+    top: 50px;
+}
+
+.Master {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.degreeList, .sports {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.chart {
+    position: absolute;
+    right: 50px;
+    top: 200px;
+}
+
+
+

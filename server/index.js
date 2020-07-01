@@ -28,11 +28,14 @@ app.delete('/auth/logout', authCtrl.logout)
 app.get('/auth/admin', authCtrl.getUser)
 
 app.get('/api/athletes', athleteCtrl.getAthletes)
+app.get('/api/chart', athleteCtrl.getChart)
 app.post('/api/athlete', athleteCtrl.addAthlete)
-app.put('/api/athlete/:id', athleteCtrl.editAthlete)
-app.delete('/api/athlete/:id', athleteCtrl.deleteAthlete)
+app.put('/api/athlete/:player_id', athleteCtrl.editAthlete)
+app.delete('/api/athlete/:player_id', athleteCtrl.deleteAthlete)
 
 app.get('/api/degree', degreeCtrl.getDegree)
+app.get('/api/degrees', degreeCtrl.getDegrees)
+app.post('/api/new', degreeCtrl.addDegree)
 
 app.get('/api/sports', sportsCtrl.getSports)
 

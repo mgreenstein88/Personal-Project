@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class Roster extends Component {
     constructor(){
@@ -7,34 +8,21 @@ class Roster extends Component {
 
         this.state = {
             isEditing: false,
-            userInput: ''
+            userInput: '',
+            
         }
-    }
-
-    toggleEdit(){
-        this.setState({
-            isEditing: !this.state.isEditing
-        })
-    }
-
-    handleChange(e){
-        this.setState({
-            userInput: e.target.value
-        })
-    }
-
-    handleSaveName(){
-        const {data} = this.props
-        this.props.saveName(data.player_id, this.state.userInput)
-        this.toggleEdit()
     }
 
     render(){
 
         return (
             <div>
-                Roster.js
-                <h2>Roster:</h2>
+                <div className='Master'>
+                    <Link className='sports' to='/roster/W%20Lacrosse'>W Lacrosse</Link>
+                    <Link className='sports' to='/roster/M%20Lacrosse'>M Lacrosse</Link>
+                    <Link className='sports' to='/roster/W%20Soccer'>W Soccer</Link>
+                    <Link className='sports' to='/roster/M%20Hockey'>M Hockey</Link>
+                </div>   
             </div>
         )
     }

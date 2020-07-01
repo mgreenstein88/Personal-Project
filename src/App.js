@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import routes from './routes'
 import {connect} from 'react-redux'
 import Header from './Components/Header'
@@ -38,9 +37,9 @@ class App extends Component {
 
         {routes}
         <h2 className='login'>
-          {this.props.admin.email ? `Hey, ${this.props.admin.email}!` : ``}
+          {this.props.admin.email ? `Hey, ${this.props.admin.email}!` : `Hey there, Friend!`}
         </h2>
-        <button className='logout' onClick={ () => this.logout() } >Logout</button>
+        <button className='logout' onClick={ () => this.logout() }>Logout</button>
       </div>
     )
   }

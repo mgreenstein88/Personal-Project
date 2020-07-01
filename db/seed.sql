@@ -4,15 +4,25 @@ CREATE TABLE admins (
     password TEXT
 )
 
-CREATE TABLE athletes (
+CREATE TABLE athletes(
     player_id SERIAL PRIMARY KEY,
+    number INT,
     name TEXT,
-    sport_id INT REFERENCES sports(sport_id),
-    isWomens BOOLEAN
+    position TEXT,
+    year INT,
+    town TEXT,
+    isWomens BOOLEAN,
+    sport_name TEXT REFERENCES sports(sport_name)
 )
 
 CREATE TABLE sports (
     sport_id SERIAL PRIMARY KEY,
     isWomens BOOLEAN,
     sport_name TEXT
+)
+
+CREATE TABLE degree (
+    degree_id SERIAL PRIMARY KEY,
+    type TEXT,
+    name TEXT
 )
