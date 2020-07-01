@@ -42,7 +42,6 @@ class Athletics extends Component {
         axios.post('/api/athlete', body)
 
         .then( res => {
-            console.log(res.data)
           this.setState({
             athletes: res.data
           })
@@ -57,6 +56,7 @@ class Athletics extends Component {
             this.setState({
             athletes: res.data
             })
+        
         }).catch(err => console.log(err))
     }
     
@@ -67,7 +67,6 @@ class Athletics extends Component {
             this.setState({
                 athletes: res.data
             })
-            this.toggleEdit()
         }).catch(err => console.log(err))
     }
 

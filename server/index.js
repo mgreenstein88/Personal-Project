@@ -12,6 +12,7 @@ const app = express()
 const SERVER = 3234
 const {CONNECTION_STRING, SECRET_SESSION} = process.env
 
+app.use(express.static(`${__dirname}/.//build`))
 app.use(express.json())
 app.use(
     session({
@@ -35,7 +36,6 @@ app.delete('/api/athlete/:player_id', athleteCtrl.deleteAthlete)
 
 app.get('/api/degree', degreeCtrl.getDegree)
 app.get('/api/degrees', degreeCtrl.getDegrees)
-app.post('/api/new', degreeCtrl.addDegree)
 
 app.get('/api/sports', sportsCtrl.getSports)
 
