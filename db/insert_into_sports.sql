@@ -1,4 +1,4 @@
 INSERT INTO sports
-(sport_id, sport_name)
+(isWomens, sport_name)
 VALUES
 ($1, $2);

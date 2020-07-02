@@ -1,10 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Header = props => {
+const Header = (props) => {
+
     return (
+        
+
         <nav>
-            <h1 className='Welcome'>Welcome to DevMountain University!</h1>
+            <h1 style={{color: 'black'}} 
+                className='Welcome'>Welcome to DevMountain University!</h1>
             <div className='nav'>
                 <Link className='links' to='/'>Home</Link>
                 <Link className='links' to='/about'>About</Link>

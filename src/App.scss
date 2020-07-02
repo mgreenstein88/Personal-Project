@@ -3,6 +3,18 @@ $titleSize: 2.5rem;
 $font: helvetica;
 $buttoncolor: rgb(214, 158, 158);
 
+%flex {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin column {
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 .App {
     text-align: center;
     .login {
@@ -16,8 +28,7 @@ $buttoncolor: rgb(214, 158, 158);
         border-radius: 25%;
         font-weight: 400;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include column;
     }
     .logout {
         position: absolute;
@@ -33,12 +44,12 @@ $buttoncolor: rgb(214, 158, 158);
 
 body {
     background-color: $primarycolor;
+    width: 100%;
+    height: 100%;
 }
 
 .photo {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    @extend %flex;
     justify-content: center;
     font-size: $titleSize;
     
@@ -46,23 +57,20 @@ body {
         position: absolute;
         font-size: 3rem;
         top:100px;
-        color: white;
     }
 }
 
-nav {
+
+
+nav{
     .Welcome {
-        position: relative;
-        display: flex;
-        flex-direction: row;
+        @extend %flex;
         justify-content: center;
         font-size: 3rem;
     }
     .nav {
-        position: sticky;
-        display: flex;
+        @extend %flex;
         width: 90%;
-        flex-direction: row;
         justify-content: space-evenly;
         background-color: rgb(242, 247, 246);
         padding: 2%;
@@ -72,9 +80,9 @@ nav {
     }
     .links {
         color: black;
-        text-decoration: none;
         size: 2rem;
         font-weight: 700;
+        text-decoration: none;
     }
 }
 
@@ -82,19 +90,16 @@ nav {
     position: absolute;
     background-color: rgb(220, 225, 245);
     display: flex;
-    flex-direction: column;
     border-radius: 10%;
-    height: 15vh;
-    width: 25vw;
-    justify-content: center;
+    height: 150px;
+    width: 350px;
     top: 400px;
-    left: 37%;
+    left: 40%;
+    @include column;
 }
 
 .athletes {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    @extend %flex;
     font-size: 1rem;
     border: 1px solid black;
     width: 70%;
@@ -106,8 +111,8 @@ nav {
 }
 
 .number {
-        position: relative;
-        left: 100px;
+    position: relative;
+    left: 100px;
 }
 .name {
     position: absolute;
@@ -133,9 +138,7 @@ nav {
     font-weight: 600;
 }
 .rosterTitle {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    @extend %flex;
     font-size: 1.2em;
     width: 70%;
     left: 270px;
@@ -151,7 +154,6 @@ nav {
     top: 350px;
     margin: 0, auto;
     width: 40vw;
-    color: white;
     left: 580px;
 }
 
@@ -186,5 +188,52 @@ nav {
     top: 200px;
 }
 
+// Responsive View Design: 
 
 
+@media(max-width: 1200px){
+    nav > .Welcome {
+        font-size: 2rem;
+    }
+    nav > .nav {
+        font-size: 1rem;
+    }
+    .body {
+        width: 80%;
+    }
+    .App > .login {
+        top: 25px;
+        font-size: 0.8rem;
+    }
+    .App > .logout {
+        top: 10px;
+        font-size: 0.7rem;
+        right: 70px;
+    }
+}
+@media(max-width: 1000px){
+    .body {
+        width: 60%;
+    }
+    
+}
+@media(max-width: 800px){
+    .body {
+        width: 50%;
+    }
+    .openView {
+        left: 300px;
+    }
+}
+@media(max-width: 700px){
+    .body {
+        width: 40%;
+    }
+}
+@media(max-width: 400px){
+    .openView {
+        height: 200px;
+        width: 200px;
+        left: 100px;
+    }
+}

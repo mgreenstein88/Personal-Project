@@ -32,7 +32,7 @@ class Register extends Component {
             this.props.loginAdmin(res.data)
             this.props.history.push('/login')
         }).catch( err => {
-            alert('Could Not Register')
+            alert('Email in use, please try again.')
         })
     }
 
@@ -45,7 +45,10 @@ class Register extends Component {
             <div>
                 <img src={photo}/>
                 <div className='openView'>
-                    Register Here!
+                    <h3
+                        style={{fontWeight: '300'},
+                        {fontSize: '1rem'}}
+                        >Register Here!</h3>
                     
                     <form className='form'
                         onSubmit={ (e) => this.register(e) } >
@@ -63,14 +66,17 @@ class Register extends Component {
                             value={password}
                             onChange={ e => this.changeHandler(e) } />
                         <input 
+                            style={{backgroundColor: 'white'}}
                             type='submit'
                             value='Register'/>
                     </form>
                     
                     <span>Already an admin? Login here:</span>
 
-                    <Link to='/login'
-                    className='links'>
+                    <Link 
+                        style={{color: 'black'}}
+                        to='/login'
+                        className='links'>
                         Login
                     </Link>
                 </div>

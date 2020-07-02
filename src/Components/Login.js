@@ -32,7 +32,7 @@ class Login extends Component {
             this.props.loginAdmin(res.data)
             this.props.history.push('/')
         }).catch( err => {
-            alert('Incorrect Something !! Ha')
+            alert('Incorrect Username or Password, Sorry!')
         })
     }
 
@@ -45,7 +45,10 @@ class Login extends Component {
             <div>
                 <img src={photo}/>
                 <div className='openView'>
-                    Login Here !
+                    <h3
+                        style={{fontWeight: '300'},
+                        {fontSize: '1rem'}}
+                        >Login Here!</h3>
                     
                     <form className='form'
                         onSubmit={ (e) => this.login(e) } >
@@ -63,13 +66,16 @@ class Login extends Component {
                             value={password}
                             onChange={ e => this.changeHandler(e) } />
                         <input 
+                            style={{backgroundColor: 'white'}}
                             type='submit'
                             value='Login'/>
                     </form>
 
                     <span>Not an admin? Register here:</span>
 
-                    <Link to='/register'
+                    <Link 
+                        style={{color: 'black'}}
+                        to='/register'
                         className='links'>
                         Register
                     </Link>
