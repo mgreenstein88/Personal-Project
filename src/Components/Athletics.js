@@ -45,6 +45,7 @@ class Athletics extends Component {
           this.setState({
             athletes: res.data
           })
+
         })
       }  
     
@@ -71,9 +72,11 @@ class Athletics extends Component {
     }
 
     toggleEdit(){
-        this.setState({
-            isEditing: !this.state.isEditing
-        })
+        if(this.props.admin.email){
+                this.setState({
+                isEditing: !this.state.isEditing
+            })
+        }         
     }
 
     handleSaveName(id){
@@ -109,7 +112,7 @@ class Athletics extends Component {
         const {name, number, position, year, town, isWomens, sport_name} = this.state
 
         const players = this.state.athletes.map((element, i) => (
-            !this.state.isEditing && this.props.admin.email ? (<div key={element.player_id}
+            !this.state.isEditing ? (<div key={element.player_id}
                 onDoubleClick={() => this.toggleEdit()}
                 >
                 <div className='athletes'>
@@ -180,7 +183,7 @@ class Athletics extends Component {
                     onChange={ e => this.addInputs(e)} />
                 <button>Submit</button>
             </form>
-
+console.log(this.state.isEditing)
         return (
             <div>
                 <span className='sportTitle'>{this.props.match.params.sport_name}</span>

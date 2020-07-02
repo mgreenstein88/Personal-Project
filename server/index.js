@@ -9,7 +9,7 @@ const sportsCtrl = require('./Controllers/sportsController')
 const degreeCtrl = require('./Controllers/degreesController')
 
 const app = express()
-const SERVER = 3234
+const SERVER = 3237
 const {CONNECTION_STRING, SECRET_SESSION} = process.env
 
 app.use(express.static(`${__dirname}/../build`))
